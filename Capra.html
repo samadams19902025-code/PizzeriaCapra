@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Capra — Sauerteigpizzeria · Leipzig-Plagwitz</title>
+
+<!-- SEO -->
+<meta name="description" content="Capra is an artisan sourdough pizzeria in Leipzig-Plagwitz. Neapolitan dough, long fermentation, San Marzano DOP, and our own Weiße Elster Pale Ale. Vegan options and natural wines. ★ 4.8 on Google." />
+<meta name="keywords" content="Sourdough Pizza Leipzig, Best Pizza Plagwitz, Capra Leipzig, Neapolitan Pizza Leipzig, Vegan Pizza Leipzig, Natural Wine Leipzig, Sauerteigpizza Leipzig" />
+<meta property="og:title" content="Capra — Sauerteigpizzeria · Leipzig-Plagwitz" />
+<meta property="og:description" content="Sourdough. Neapolitan. Plagwitz. Artisan pizza, our own craft beer, natural wines." />
+<meta property="og:type" content="restaurant" />
+<meta name="robots" content="index, follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --charcoal:#2D2D2D;
+    --ink:#23211e;
+    --parchment:#F7F3ED;
+    --parchment-2:#EFE9DF;
+    --terracotta:#B86B4A;
+    --olive:#6B7A5C;
+    --gold:#C4A96A;
+    --muted:#8a8378;
+    --line:rgba(45,45,45,.14);
+    --maxw:1180px;
+    --display:'Jost', system-ui, sans-serif;
+    --body:'Hanken Grotesk', system-ui, sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--body);
+    color:var(--charcoal);
+    background:var(--parchment);
+    font-size:18px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+
+  /* ---------- type ---------- */
+  .display{font-family:var(--display);font-weight:400;letter-spacing:.01em;line-height:1.04;}
+  .eyebrow{
+    font-family:var(--display);
+    text-transform:uppercase;
+    letter-spacing:.42em;
+    font-size:12.5px;
+    font-weight:500;
+    color:var(--terracotta);
+    margin:0 0 22px;
+  }
+  h2.section-title{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(2rem,4.4vw,3.4rem);
+    line-height:1.05;
+    margin:0 0 1.4rem;
+    letter-spacing:.005em;
+  }
+  p{text-wrap:pretty;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+
+  /* ---------- nav (not sticky) ---------- */
+  header.topnav{
+    position:absolute;top:0;left:0;right:0;z-index:20;
+  }
+  .topnav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:30px;padding-bottom:30px;
+  }
+  .brand{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:24px;
+    letter-spacing:.34em;
+    color:#fff;
+    padding-left:.34em;
+  }
+  nav.links{display:flex;gap:38px;align-items:center;}
+  nav.links a{
+    font-family:var(--display);
+    font-size:14px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.82);
+    transition:color .3s ease;
+  }
+  nav.links a:hover{color:#fff;}
+  nav.links a.reserve{
+    border:1px solid rgba(255,255,255,.55);
+    padding:9px 20px;border-radius:2px;
+    color:#fff;
+  }
+  nav.links a.reserve:hover{background:#fff;color:var(--charcoal);}
+  .nav-toggle{display:none;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;min-height:100svh;
+    display:flex;align-items:flex-end;
+    color:#fff;overflow:hidden;
+  }
+  .hero-bg{position:absolute;inset:0;}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;}
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(20,18,16,.46) 0%, rgba(20,18,16,.12) 30%, rgba(20,18,16,.30) 64%, rgba(20,18,16,.82) 100%);
+  }
+  .hero-inner{position:relative;z-index:2;width:100%;padding-bottom:7vh;}
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--display);font-size:13px;letter-spacing:.18em;
+    text-transform:uppercase;
+    border:1px solid rgba(255,255,255,.45);
+    padding:7px 16px;border-radius:40px;margin-bottom:30px;
+    backdrop-filter:blur(2px);
+  }
+  .hero-badge .star{color:var(--gold);font-size:15px;}
+  .hero h1{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(4.2rem,17vw,12rem);
+    line-height:.86;
+    letter-spacing:.02em;
+    margin:0;
+  }
+  .hero .sub{
+    font-family:var(--display);
+    font-weight:300;
+    font-size:clamp(1.1rem,2.4vw,1.7rem);
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    margin:18px 0 0;
+    color:rgba(255,255,255,.9);
+  }
+  .hero .tagline{
+    font-size:clamp(1rem,1.7vw,1.25rem);
+    margin:20px 0 0;color:rgba(255,255,255,.86);font-weight:300;
+  }
+  .hero-cta{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;}
+  .btn{
+    font-family:var(--display);
+    font-size:14px;letter-spacing:.16em;text-transform:uppercase;
+    padding:15px 30px;border-radius:2px;cursor:pointer;
+    transition:all .3s ease;display:inline-block;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--terracotta);color:#fff;}
+  .btn-primary:hover{background:#a35c3d;transform:translateY(-1px);}
+  .btn-ghost{border-color:rgba(255,255,255,.6);color:#fff;}
+  .btn-ghost:hover{background:rgba(255,255,255,.12);}
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(80px,11vw,150px) 0;}
+
+  /* craft */
+  .craft{background:var(--parchment);}
+  .craft-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,7vw,96px);align-items:center;}
+  .craft-copy p{margin:0 0 1.5rem;font-size:1.12rem;color:#3a3631;}
+  .craft-copy p:first-of-type{font-size:1.3rem;line-height:1.55;color:var(--charcoal);}
+  .craft-copy .signoff{font-family:var(--display);font-style:normal;color:var(--terracotta);font-size:1.05rem;letter-spacing:.02em;}
+  .craft-photo{position:relative;}
+  .craft-photo img{width:100%;height:640px;object-fit:cover;border-radius:2px;}
+  .photo-caption{
+    font-family:var(--display);font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--muted);margin-top:14px;
+  }
+
+  /* menu */
+  .menu{background:var(--ink);color:var(--parchment);}
+  .menu .eyebrow{color:var(--gold);}
+  .menu-head{text-align:center;max-width:640px;margin:0 auto clamp(50px,7vw,84px);}
+  .menu-head h2{color:var(--parchment);}
+  .menu-head p{color:rgba(247,243,237,.62);margin:0;}
+  .menu-cat{margin-bottom:clamp(46px,6vw,72px);}
+  .menu-cat:last-child{margin-bottom:0;}
+  .cat-label{
+    font-family:var(--display);
+    font-size:13px;letter-spacing:.42em;text-transform:uppercase;
+    color:var(--gold);
+    padding-bottom:16px;margin-bottom:30px;
+    border-bottom:1px solid rgba(247,243,237,.16);
+  }
+  .menu-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 64px;}
+  .menu-list.single{grid-template-columns:1fr;max-width:760px;}
+  .menu-item{padding:15px 0;border-bottom:1px solid rgba(247,243,237,.08);}
+  .menu-item .name-row{display:flex;align-items:baseline;gap:10px;}
+  .menu-item .name{
+    font-family:var(--display);font-size:1.18rem;font-weight:500;color:var(--parchment);letter-spacing:.01em;
+  }
+  .tag{font-size:12px;letter-spacing:.08em;}
+  .tag.veg{color:var(--olive);}
+  .tag.veg{color:#9bad84;}
+  .tag.star{color:var(--gold);font-size:13px;}
+  .menu-item .desc{font-size:.95rem;color:rgba(247,243,237,.55);margin-top:3px;line-height:1.5;}
+  .menu-note{
+    margin-top:38px;font-size:.9rem;color:rgba(247,243,237,.45);
+    max-width:760px;font-style:italic;
+  }
+  .drinks-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px 64px;}
+  .drink-line{padding:13px 0;border-bottom:1px solid rgba(247,243,237,.08);}
+  .drink-line .name{font-family:var(--display);font-size:1.1rem;color:var(--parchment);font-weight:500;}
+  .drink-line .desc{font-size:.92rem;color:rgba(247,243,237,.55);margin-top:2px;}
+
+  /* beer */
+  .beer{background:var(--olive);color:var(--parchment);}
+  .beer-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,7vw,90px);align-items:center;}
+  .beer .eyebrow{color:#e7dcc4;}
+  .beer h2{color:var(--parchment);}
+  .beer p{color:rgba(247,243,237,.86);font-size:1.12rem;margin:0 0 1.2rem;}
+  .beer-photo img{width:100%;height:560px;object-fit:cover;border-radius:2px;}
+
+  /* space */
+  .space{background:var(--parchment-2);}
+  .space-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:48px;}
+  .space-head h2{margin:0;}
+  .space-head .line{font-family:var(--display);font-size:1.1rem;color:#5d574d;max-width:380px;font-weight:300;}
+  .space-gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;}
+  .space-gallery figure{margin:0;overflow:hidden;border-radius:2px;}
+  .space-gallery img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);}
+  .space-gallery figure:hover img{transform:scale(1.05);}
+  .g1{grid-column:span 7;height:440px;}
+  .g2{grid-column:span 5;height:440px;}
+  .g3{grid-column:span 4;height:340px;}
+  .g4{grid-column:span 4;height:340px;}
+  .g5{grid-column:span 4;height:340px;}
+
+  /* reviews */
+  .reviews{background:var(--parchment);}
+  .reviews-head{text-align:center;margin-bottom:clamp(48px,6vw,72px);}
+  .reviews-head .rating{
+    font-family:var(--display);font-size:1.1rem;letter-spacing:.06em;color:var(--muted);margin-top:8px;
+  }
+  .reviews-head .rating .star{color:var(--gold);}
+  .review-grid{columns:3;column-gap:32px;}
+  .review{
+    break-inside:avoid;margin:0 0 32px;padding:32px 34px;
+    background:#fff;border:1px solid var(--line);border-radius:3px;
+  }
+  .review .quote{font-size:1.06rem;line-height:1.6;color:#3a3631;margin:0 0 20px;}
+  .review .who{font-family:var(--display);font-weight:500;font-size:.98rem;letter-spacing:.02em;}
+  .review .meta{font-size:.82rem;color:var(--muted);letter-spacing:.04em;margin-top:2px;}
+
+  /* info + map */
+  .info{background:var(--ink);color:var(--parchment);}
+  .info-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(40px,6vw,80px);align-items:center;}
+  .info .eyebrow{color:var(--gold);}
+  .info h2{color:var(--parchment);}
+  .info-list{list-style:none;padding:0;margin:18px 0 0;}
+  .info-list li{
+    display:flex;gap:18px;padding:18px 0;border-bottom:1px solid rgba(247,243,237,.1);
+    font-size:1.04rem;color:rgba(247,243,237,.82);
+  }
+  .info-list li .k{
+    font-family:var(--display);font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--gold);min-width:96px;padding-top:4px;flex-shrink:0;
+  }
+  .info-list li a{color:var(--parchment);border-bottom:1px solid rgba(247,243,237,.35);}
+  .map-frame{border-radius:3px;overflow:hidden;border:1px solid rgba(247,243,237,.14);height:100%;min-height:420px;}
+  .map-frame iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.25) contrast(1.02);}
+
+  /* footer */
+  footer.site{background:var(--charcoal);color:rgba(247,243,237,.7);padding:64px 0;}
+  .footer-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;}
+  footer .fbrand{font-family:var(--display);font-size:22px;letter-spacing:.32em;color:var(--parchment);padding-left:.32em;}
+  footer .fmeta{font-size:.95rem;}
+  footer .flinks{display:flex;gap:28px;font-family:var(--display);font-size:13px;letter-spacing:.14em;text-transform:uppercase;}
+  footer .flinks a{color:rgba(247,243,237,.7);transition:color .3s;}
+  footer .flinks a:hover{color:var(--parchment);}
+
+  /* floating reserve */
+  .float-cta{
+    position:fixed;bottom:26px;right:26px;z-index:40;
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--display);font-size:13px;letter-spacing:.12em;text-transform:uppercase;
+    background:rgba(45,45,45,.92);color:var(--parchment);
+    padding:13px 22px;border-radius:40px;
+    border:1px solid rgba(247,243,237,.18);
+    backdrop-filter:blur(6px);
+    box-shadow:0 8px 30px rgba(0,0,0,.22);
+    transition:transform .3s ease, background .3s ease;
+  }
+  .float-cta:hover{transform:translateY(-2px);background:var(--terracotta);border-color:transparent;}
+  .float-cta .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);}
+
+  /* language switch */
+  .lang-switch{
+    position:fixed;bottom:26px;left:26px;z-index:40;
+    display:inline-flex;align-items:center;
+    background:rgba(45,45,45,.92);
+    border:1px solid rgba(247,243,237,.18);
+    border-radius:40px;padding:4px;
+    backdrop-filter:blur(6px);
+    box-shadow:0 8px 30px rgba(0,0,0,.22);
+  }
+  .lang-switch button{
+    border:0;background:transparent;cursor:pointer;
+    font-family:var(--display);font-size:12px;letter-spacing:.16em;
+    color:rgba(247,243,237,.6);
+    padding:7px 15px;border-radius:40px;transition:color .3s ease,background .3s ease;
+  }
+  .lang-switch button.active{background:var(--gold);color:var(--charcoal);}
+  .lang-switch button:hover:not(.active){color:var(--parchment);}
+
+  /* fade-in */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+  /* responsive */
+  @media (max-width:900px){
+    body{font-size:17px;}
+    nav.links{display:none;}
+    .craft-grid,.beer-grid,.info-grid{grid-template-columns:1fr;}
+    .craft-photo img{height:440px;}
+    .menu-list,.drinks-grid{grid-template-columns:1fr;gap:4px 0;}
+    .review-grid{columns:1;}
+    .space-gallery{grid-template-columns:repeat(2,1fr);}
+    .g1,.g2{grid-column:span 2;height:320px;}
+    .g3,.g4,.g5{grid-column:span 1;height:240px;}
+    .g5{grid-column:span 2;}
+    .beer-photo{order:-1;}
+    .beer-photo img{height:380px;}
+    .space-head{flex-direction:column;align-items:flex-start;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 22px;}
+    .float-cta{bottom:18px;right:18px;padding:12px 18px;}
+    .lang-switch{bottom:18px;left:18px;}
+    .hero h1{letter-spacing:.01em;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="topnav">
+  <div class="wrap">
+    <a href="#top" class="brand">CAPRA</a>
+    <nav class="links">
+      <a href="#craft" data-de="Das Handwerk">The Craft</a>
+      <a href="#menu" data-de="Speisekarte">Menu</a>
+      <a href="#beer" data-de="Bier &amp; Getränke">Beer &amp; Drinks</a>
+      <a href="#space" data-de="Das Lokal">The Space</a>
+      <a href="#visit" data-de="Besuch">Visit</a>
+      <a href="tel:+4934155010511" class="reserve" data-de="Reservieren · Anrufen">Reserve · Call</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="images/hero-pizza-share.png" alt="A leopard-spotted Neapolitan sourdough pizza shared at a Capra table" />
+  </div>
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="hero-badge" data-de='<span class="star">★</span> 4,8 bei Google'><span class="star">★</span> 4.8 on Google</span>
+      <!-- VERIFY: insert exact Google review count from Maps listing -->
+      <h1 class="display">Capra</h1>
+      <p class="sub">Sauerteigpizzeria</p>
+      <p class="tagline" data-de="Sauerteig. Neapolitanisch. Plagwitz.">Sourdough. Neapolitan. Plagwitz.</p>
+      <div class="hero-cta">
+        <a href="tel:+4934155010511" class="btn btn-primary" data-de="Tisch reservieren">Reserve a Table</a>
+        <a href="#menu" class="btn btn-ghost" data-de="Zur Speisekarte">See the Menu</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE CRAFT ============ -->
+<section class="craft" id="craft">
+  <div class="wrap">
+    <div class="craft-grid">
+      <div class="craft-copy reveal">
+        <p class="eyebrow" data-de="Das Handwerk">The Craft</p>
+        <p data-de="Unser Teig beginnt mit Weizensauerteig und Zeit — lange Gärung, keine Abkürzungen. Er backt schnell im sehr heißen Ofen, gerade lang genug, bis die Leopardenflecken am Rand erscheinen. Außen weich, perfekt aufgegangen, leicht bekömmlich.">Our dough starts with wheat sourdough and time — long fermentation, no shortcuts. It bakes fast in a very hot oven, just long enough for the leopard spots to appear on the crust. Soft at the edges, perfectly leavened, easy to digest.</p>
+        <p data-de="Die Tomaten sind San Marzano DOP. Die Mozzarella ist Fior di Latte. Die Beläge sind wenige und bewusst gewählt — Ziegenkäsecreme mit Cranberrys und Salbei, Bresaola mit Zitronenzeste, Cacio e Pepe mit Pflaumenbalsamico. Unsere Karte bleibt klein, weil sich jede Pizza darauf ihren Platz verdient hat.">The tomatoes are San Marzano DOP. The mozzarella is Fior di Latte. The toppings are few and intentional — goat cheese cream with cranberries and sage, bresaola with lemon zest, cacio e pepe with plum balsamic. We keep the menu small because every pizza on it has earned its place.</p>
+        <p data-de="Unser Pizzaiolo Felice ist echter Neapolitaner. Er hat in London, in den Niederlanden und für einen Scheich gearbeitet, bevor er sich für Leipzig entschied. Der Sauerteig bekommt seine Zeit und Aufmerksamkeit. Das Ergebnis liegt auf deinem Teller.">Our pizzaiolo Felice is a real Neapolitan. He worked in London, the Netherlands, and for a sheikh before choosing Leipzig. The sourdough gets his time and attention. The result is on your plate.</p>
+        <p class="signoff" data-de="— Capra, seit November 2022">— Capra, since November 2022</p>
+      </div>
+      <div class="craft-photo reveal">
+        <img src="images/pizza-salami-leopard.png" alt="Close-up of a sourdough crust with leopard spotting" />
+        <p class="photo-caption" data-de="Der Leopardenrand — Weizensauerteig, lange Gärung">The leopard crust — wheat sourdough, long fermentation</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="menu-head reveal">
+      <p class="eyebrow" data-de="Die Speisekarte">The Menu</p>
+      <h2 class="section-title" data-de="Bewusst klein">Small on purpose</h2>
+      <p data-de="Ein Dutzend Pizzen, drei Antipasti, eine kurze Auswahl an Desserts und Getränken. Jede Zutat ist gewählt, nicht selbstverständlich.">A dozen pizzas, three antipasti, a short list of desserts and drinks. Every ingredient is chosen, not defaulted to.</p>
+    </div>
+
+    <!-- ANTIPASTI -->
+    <div class="menu-cat reveal">
+      <div class="cat-label">Antipasti</div>
+      <div class="menu-list single">
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Tagliere Grande</span></div>
+          <p class="desc" data-de="Büffelmozzarella, Tomaten, Provola, Bresaola, Salami Napoli, Auberginenragout, Rucola, Pizzabrot, Dip">Buffalo mozzarella, tomatoes, Provola, Bresaola, Salami Napoli, eggplant ragout, arugula, pizza bread, dip</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Olive Board</span></div>
+          <p class="desc" data-de="Oliven, eingelegte Tomaten, Provola, Pizzabrot, Dip">Olives, pickled tomatoes, Provola, pizza bread, dip</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Caprese</span></div>
+          <p class="desc" data-de="Büffelmozzarella, Tomaten, Basilikumpesto, Rucola, Pizzabrot, Dip">Buffalo mozzarella, tomatoes, basil pesto, arugula, pizza bread, dip</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIZZA -->
+    <div class="menu-cat reveal">
+      <div class="cat-label">Pizza</div>
+      <div class="menu-list">
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Marinara</span><span class="tag veg">🌱 vegan</span></div>
+          <p class="desc" data-de="San Marzano DOP, Knoblauch, Olivenöl, Oregano">San Marzano DOP, garlic, olive oil, oregano</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Margherita</span></div>
+          <p class="desc" data-de="San Marzano DOP, Fior di Latte, Basilikum">San Marzano DOP, Fior di Latte, basil</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Aubergine</span><span class="tag veg">🌱 vegan</span></div>
+          <p class="desc" data-de="San Marzano DOP, Auberginenragout mit Miso, Knoblauchcreme">San Marzano DOP, eggplant ragout with miso, garlic cream</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Salami Napoli</span></div>
+          <p class="desc" data-de="San Marzano DOP, Fior di Latte, milde Salami Napoli">San Marzano DOP, Fior di Latte, mild Salami Napoli</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Bresaola</span></div>
+          <p class="desc" data-de="San Marzano DOP, Fior di Latte, Bresaola, Rucola, Zitronenzeste">San Marzano DOP, Fior di Latte, bresaola, arugula, lemon zest</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Paprika</span></div>
+          <p class="desc" data-de="Scharfe Paprikacreme, Paprika, Fior di Latte, Ricotta, Walnüsse">Spicy paprika cream, paprika, Fior di Latte, ricotta, walnuts</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Capra</span><span class="tag star" data-de="★ Spezialität">★ signature</span></div>
+          <p class="desc" data-de="Ziegenkäsecreme, Fior di Latte, Cranberryragout, Panko, Mandeln, Salbei">Goat cheese cream, Fior di Latte, cranberry ragout, panko, almonds, sage</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Fungi</span></div>
+          <p class="desc" data-de="Ricotta, Fior di Latte, Pilze, Maronen, Petersilie">Ricotta, Fior di Latte, mushrooms, chestnuts, parsley</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Nduja</span></div>
+          <!-- VERIFY: confirm exact description from current menu -->
+          <p class="desc" data-de="San Marzano DOP, Fior di Latte, scharfe kalabrische 'Nduja">San Marzano DOP, Fior di Latte, spicy Calabrian 'nduja</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Cacio e Pepe</span></div>
+          <p class="desc" data-de="Pecorinocreme, schwarzer Pfeffer, Pflaumenbalsamico">Pecorino cream, black pepper, plum balsamic</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Foresta</span></div>
+          <!-- VERIFY: confirm exact description from current menu -->
+          <p class="desc" data-de="Waldpilze, Fior di Latte, Kräuter">Forest mushrooms, Fior di Latte, herbs</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Parmigiana</span><span class="tag veg">🌱 vegan</span></div>
+          <!-- VERIFY: confirm exact description from current menu -->
+          <p class="desc" data-de="San Marzano DOP, Auberginen-Parmigiana, Basilikum">San Marzano DOP, eggplant parmigiana, basil</p>
+        </div>
+      </div>
+      <p class="menu-note" data-de="Glutenfreier Teig verfügbar — wir können Spuren von Kontamination nicht ausschließen und empfehlen ihn nicht für Zöliakie-Betroffene.">Glutenfree dough available — please note we cannot guarantee against trace contamination and do not recommend it for celiac guests.</p>
+    </div>
+
+    <!-- DRINKS -->
+    <div class="menu-cat reveal">
+      <div class="cat-label" data-de="Getränke">Drinks</div>
+      <div class="drinks-grid">
+        <div class="drink-line">
+          <div class="name">Weiße Elster Pale Ale</div>
+          <div class="desc" data-de="Unser eigenes Craft-Bier, vom Fass">Our own craft beer, on tap</div>
+        </div>
+        <div class="drink-line">
+          <div class="name">Pilsner</div>
+          <div class="desc" data-de="Klassisch, vom Fass">Classic, on tap</div>
+        </div>
+        <div class="drink-line">
+          <div class="name" data-de="Wein &amp; Naturweine">Wine &amp; Naturweine</div>
+          <div class="desc" data-de="Klassische Weine und eine kuratierte Naturweinkarte">Classic wines and a curated natural wine list</div>
+        </div>
+        <div class="drink-line">
+          <div class="name" data-de="Alkoholfrei">Alcohol-free</div>
+          <div class="desc" data-de="Schorle (Apfel-Holunderblüte, Johannisbeere, Traube), alkoholfreier Wein, alkoholfreier Gin Tonic, Crodino">Schorle (apple-elderflower, currant, grape), alcohol-free wine, alcohol-free Gin Tonic, Crodino</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESSERT -->
+    <div class="menu-cat reveal">
+      <div class="cat-label">Dessert</div>
+      <div class="menu-list">
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Tiramisù classico</span></div>
+          <p class="desc" data-de="Hausgemacht">Made in house</p>
+        </div>
+        <div class="menu-item">
+          <div class="name-row"><span class="name">Vegan dessert</span><span class="tag veg">🌱 vegan</span></div>
+          <p class="desc" data-de="Wechselt regelmäßig">Changes regularly</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEER ============ -->
+<section class="beer" id="beer">
+  <div class="wrap">
+    <div class="beer-grid">
+      <div class="reveal">
+        <p class="eyebrow" data-de="Unser Bier">Our Beer</p>
+        <h2 class="section-title" data-de="Wir machen nicht nur Pizza">We don&rsquo;t just make pizza</h2>
+        <p data-de="Weiße Elster Pale Ale ist unser eigenes, hier in Leipzig gebraut. Es kommt vom Fass, neben einem klassischen Pils.">Weiße Elster Pale Ale is ours, brewed right here in Leipzig. It pours on tap alongside a classic Pilsner.</p>
+        <p data-de="Für Weinliebhaber eine kuratierte Auswahl klassischer Weine und Naturweine. Für alle anderen regionale Schorlen, Crodino und eine ordentliche Auswahl alkoholfreier Getränke.">For wine lovers, a curated list of classic and natural wines. For everyone else, regional Schorlen, Crodino, and a proper range of alcohol-free options.</p>
+        <p data-de="Niemand bleibt durstig.">Nobody goes thirsty.</p>
+      </div>
+      <div class="beer-photo reveal">
+        <img src="images/drinks-schorle.png" alt="Regional Schorle and drinks on a Capra table" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE SPACE ============ -->
+<section class="space" id="space">
+  <div class="wrap">
+    <div class="space-head reveal">
+      <h2 class="section-title" data-de="Das Lokal">The Space</h2>
+      <p class="line" data-de="Recycelte Tische. Kunst an den Wänden. Gute Musik, leise. Plagwitz, wie es sein soll.">Recycled tables. Art on the walls. Good music, low volume. Plagwitz, as it should be.</p>
+    </div>
+    <div class="space-gallery reveal">
+      <figure class="g1"><img src="images/space-interior-mural.png" alt="Interior with recycled wood tables and a mural" /></figure>
+      <figure class="g2"><img src="images/space-night-neon.png" alt="Capra at night, blue neon sign and a warm patio" /></figure>
+      <figure class="g3"><img src="images/space-dusk-umbrella.png" alt="Outdoor seating at dusk under an orange umbrella" /></figure>
+      <figure class="g4"><img src="images/space-dog-patio.png" alt="A dog resting on the Capra patio — dogs welcome" /></figure>
+      <figure class="g5"><img src="images/space-red-table.png" alt="A café table on Karl-Heine-Straße" /></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews-head reveal">
+      <p class="eyebrow" style="color:var(--terracotta);" data-de="In ihren Worten">In Their Words</p>
+      <h2 class="section-title" data-de="Was Gäste sagen">What guests say</h2>
+      <p class="rating" data-de='<span class="star">★</span> 4,8 bei Google'><span class="star">★</span> 4.8 on Google</p>
+    </div>
+    <div class="review-grid">
+      <div class="review reveal">
+        <p class="quote" data-de="Tolle vegetarische Pizza — der Teig war köstlich. Ich liebte die Deko, die recycelten Tische und die schönen Kunstwerke. Die Inhaber stecken so viel Liebe hinein.">Amazing vegetarian pizza — the dough was delicious. I loved the decorations, the recycled tables and the beautiful artwork. The owners put so much love into it.</p>
+        <div class="who">Lujan Cordaro</div>
+        <div class="meta">Google review</div>
+      </div>
+      <div class="review reveal">
+        <p class="quote" data-de="Das Highlight war die Pizza, vor allem die „Capra“ — für mich eine der besten überhaupt. Ein herzlicher Empfang vom ersten Moment an.">The highlight was the pizza, and especially the &ldquo;Capra&rdquo; &mdash; for me, one of the best I&rsquo;ve had. A warm welcome from the moment we walked in.</p>
+        <div class="who">Paul</div>
+        <div class="meta">Google review</div>
+      </div>
+      <div class="review reveal">
+        <p class="quote" data-de="Wer denkt, dass alle Pizzen gleich sind, hat diesen Sauerteig noch nicht probiert.">Anyone who thinks all pizzas are the same has never tried this sourdough.</p>
+        <div class="who">Falk Jaksch</div>
+        <div class="meta">Local Guide · Google</div>
+      </div>
+      <div class="review reveal">
+        <p class="quote" data-de="Wir hatten eine glutenfreie, vegane Pizza und hätten es ehrlich nicht gemerkt. Ersatzprodukte enttäuschen sonst — diese war fantastisch.">We had a gluten-free, vegan pizza and honestly wouldn&rsquo;t have known. Substitutes are usually disappointing — this one was fantastic.</p>
+        <div class="who">Ekaterina Graf</div>
+        <div class="meta">Local Guide · Google</div>
+      </div>
+      <div class="review reveal">
+        <p class="quote" data-de="Die beste Pizza in Leipzig. Klassisch neapolitanisch — aromatischer, luftiger Teig, eine köstliche Tomatensauce, guter Käse. Einfache Dinge, richtig gemacht.">The best pizza in Leipzig. Classic Neapolitan style — aromatic, fluffy dough, a delicious tomato sauce, good cheese. Built on simple things done right.</p>
+        <div class="who">Ferdinand Moors</div>
+        <div class="meta">Local Guide · Google</div>
+      </div>
+      <div class="review reveal">
+        <p class="quote" data-de="Köstliche Pizza — die Cacio e Pepe — und ein so aufmerksamer Service, dass kein Wunsch offenblieb. Ein rundum perfekter Abend. Wir kommen wieder.">Delicious pizza — the Cacio e Pepe — and service so attentive it met every wish. A genuinely perfect evening. We&rsquo;ll be back.</p>
+        <div class="who">Torsten H.</div>
+        <div class="meta">Local Guide · Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT / INFO + MAP ============ -->
+<section class="info" id="visit">
+  <div class="wrap">
+    <div class="info-grid">
+      <div class="reveal">
+        <p class="eyebrow" data-de="Besuch">Visit</p>
+        <h2 class="section-title" data-de="Findet uns in Plagwitz">Find us in Plagwitz</h2>
+        <ul class="info-list">
+          <li><span class="k" data-de="Adresse">Address</span><span>Birkenstraße 32, 04177 Leipzig-Plagwitz</span></li>
+          <li><span class="k" data-de="Öffnungszeiten">Hours</span><span data-de="Mittwoch – Sonntag ab 17:00 Uhr · Küche schließt 21:30 Uhr · Montag &amp; Dienstag geschlossen">Wednesday – Sunday from 17:00 · Kitchen closes 21:30 · Monday &amp; Tuesday closed</span></li>
+          <li><span class="k" data-de="Telefon">Phone</span><span data-de='<a href="tel:+4934155010511">+49 341 5501 0511</a> &middot; zum Reservieren anrufen'><a href="tel:+4934155010511">+49 341 5501 0511</a> &middot; call to reserve a table</span></li>
+          <li><span class="k" data-de="Gut zu wissen">Good to know</span><span data-de="Vegane Optionen immer verfügbar · Glutenfreier Teig (nicht für Zöliakie) · Hunde willkommen">Vegan options always available · Glutenfree dough (not suitable for celiac) · Dogs welcome</span></li>
+          <li><span class="k">Instagram</span><span><a href="https://instagram.com/capra_leipzig" target="_blank" rel="noopener">@capra_leipzig</a></span></li>
+        </ul>
+      </div>
+      <div class="map-frame reveal">
+        <iframe
+          title="Map to Capra, Birkenstraße 32, Leipzig"
+          src="https://www.google.com/maps?q=Birkenstra%C3%9Fe+32,+04177+Leipzig&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="fbrand">CAPRA</div>
+      <div class="fmeta">Capra Sauerteigpizzeria · Plagwitz, Leipzig</div>
+      <div class="flinks">
+        <a href="https://instagram.com/capra_leipzig" target="_blank" rel="noopener">Instagram</a>
+        <a href="tel:+4934155010511" data-de="Anrufen">Call</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- floating reserve -->
+<a href="tel:+4934155010511" class="float-cta" data-de='<span class="dot"></span> Reservieren &middot; Anrufen'><span class="dot"></span> Reserve &middot; Call</a>
+
+<!-- language switch -->
+<div class="lang-switch" role="group" aria-label="Sprache / Language">
+  <button type="button" data-lang="en" class="active">EN</button>
+  <button type="button" data-lang="de">DE</button>
+</div>
+
+<script>
+  // subtle, slow fade-in
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+      });
+    },{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e);});
+  })();
+
+  // language toggle (EN/DE) with persistence
+  (function(){
+    var KEY='capra_lang';
+    function apply(lang){
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-de]').forEach(function(el){
+        if(el.__en===undefined){el.__en = el.innerHTML;}
+        el.innerHTML = (lang==='de') ? el.getAttribute('data-de') : el.__en;
+      });
+      document.querySelectorAll('.lang-switch button').forEach(function(b){
+        b.classList.toggle('active', b.getAttribute('data-lang')===lang);
+      });
+      try{localStorage.setItem(KEY,lang);}catch(e){}
+    }
+    var saved='en';
+    try{saved = localStorage.getItem(KEY) || 'en';}catch(e){}
+    document.querySelectorAll('.lang-switch button').forEach(function(b){
+      b.addEventListener('click', function(){ apply(b.getAttribute('data-lang')); });
+    });
+    apply(saved);
+  })();
+</script>
+</body>
+</html>
